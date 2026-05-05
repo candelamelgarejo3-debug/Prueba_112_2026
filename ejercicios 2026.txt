@@ -1,0 +1,31 @@
+import math 
+lado_menor = float(input("Ingrese el lado menor: "))
+lado_mayor = float(input("Ingrese al lado mayor: "))
+diagonal_menor = float(input("Ingrese a la diagonal menor: "))
+
+cateto_menor = diagonal_menor / 2 
+# x = math.sqrt(math.pow(lado_menor, 2)- math.pow(cateto_menor, 2)
+x = ((lado_menor ** 2) - cateto_menor ** 2) ** 0.5
+y = ((lado_mayor ** 2) - cateto_menor **2) ** 0.5
+
+diagonal_mayor = x + y 
+
+cantidad_varilla_cm = (lado_mayor + lado_menor) * 2 
+
+area_triangulo_chico = (cateto_menor * x)
+area_triangulo_grande = (cateto_menor * y)
+
+area_cuerpo_cm2 = area_triangulo_chico + area_triangulo_grande 
+
+area_cola_cm2 = area_cuerpo_cm2 * 0.1
+
+total_papel_cm2 = area_cuerpo_cm2 + area_cola_cm2 
+
+total_varillas_mt = cantidad_varilla_cm / 100
+
+total_papel_mt2 = total_papel_cm2 / 10000
+
+total_varilla_produccion = total_varillas_mt * 10 
+total_papel_produccion = total_papel_mt2 * 10
+print(f"Se necesitan: {total_papel_produccion} mt de varilla y {total_papel_produccion} mt2 de papel")
+
